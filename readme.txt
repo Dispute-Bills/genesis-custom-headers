@@ -11,6 +11,8 @@ Add custom headers to each page/post/custom post type. Header options include: f
 
 == Description ==
 
+**Upgrade Notice:** For those upgrading from version 1.0.0 to 1.1.0, make sure you head to the plugin settings page after you upgrade and select the header options you want enabled. For those installing for the first time, defaults will be automatically set. If you have any questions let me know in the plugin support forum, thanks!
+
 **Please Note:** This plugin is only for Genesis Framework users. Genesis is a premium product by [StudioPress](http://www.studiopress.com).
 
 Originally designed to allow the easy addition of custom images and featured images to selected posts, this plugin was greatly expanded to provide a wide range of header content options which are listed below. It is important to mention that this plugin does *not* add headers to every page of your site like some other plugins in the Wordpress plugin repository. Genesis Custom Headers simply allows you to add customized headers to pages, posts, and public custom post types.
