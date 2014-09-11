@@ -2,16 +2,14 @@
 Contributors: ndiego, outermostdesign
 Tags: header, genesis, custom header, featured image, Genesis Framework, genesiswp
 Requires at least: 3.6
-Tested up to: 3.9.1
-Stable tag: 1.1.0
+Tested up to: 4.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add custom headers to each page/post/custom post type. Header options include: featured image, custom image, slideshows, HTML, scripts, and more. 
 
 == Description ==
-
-**Upgrade Notice:** For those upgrading from version 1.0.0 to 1.1.0, make sure you head to the plugin settings page after you upgrade and select the header options you want enabled. For those installing for the first time, defaults will be automatically set. If you have any questions let me know in the plugin support forum, thanks!
 
 **Please Note:** This plugin is only for Genesis Framework users. Genesis is a premium product by [StudioPress](http://www.studiopress.com).
 
@@ -58,6 +56,9 @@ Genesis Custom Headers does not actually include copies of the slider plugins li
 5. An output example using a custom image and caption on the Genesis default theme by StudioPress
 
 == Changelog ==
+
+= 1.1.1 =
+* Added deactivation function so plugin will deactivate if a user switches to a non-Genesis theme
 
 = 1.1.0 =
 * Added ability to enable/disable various header options from the Settings Page for a cleaner UI
