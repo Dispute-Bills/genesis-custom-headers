@@ -102,7 +102,7 @@ function gch_print_header() {
 
 	$gch_enable_header			= (isset($custom[ '_gch_enable_header' ][0]) ? $custom[ '_gch_enable_header' ][0] : 0);
 	$gch_enable_image			= (isset($custom[ '_gch_enable_image' ][0]) ? $custom[ '_gch_enable_image' ][0] : 0);
-	$gch_disable_header_wrap		= (isset($custom[ '_disable_header_wrap' ][0]) ? $custom[ '_disable_header_wrap' ][0] : 0);
+	$gch_disable_header_wrap		= (isset($custom[ '_gch_disable_header_wrap' ][0]) ? $custom[ '_gch_disable_header_wrap' ][0] : 0);
 	$gch_image_type				= (isset($custom[ '_gch_image_type' ][0]) ? $custom[ '_gch_image_type' ][0] : '');
 	$gch_custom_image  			= (isset($custom[ '_gch_custom_image' ][0]) ? $custom[ '_gch_custom_image' ][0] : '');
 	$gch_custom_image_alt		= (isset($custom[ '_gch_custom_image_alt' ][0]) ? $custom[ '_gch_custom_image_alt' ][0] : '');
