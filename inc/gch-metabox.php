@@ -381,8 +381,9 @@ function gch_save_meta( $post_id ) {
 	} else {
 		delete_post_meta( $post_id, '_gch_enable_header' );
 	}
+	
 	if ( isset( $_POST[ 'gch_disable_header_wrap' ] ) ) {
-		update_post_meta( $post_id, '_gch_disable_header_wrap', $_POST['_gch_disable_header_wrap'] );
+		update_post_meta( $post_id, '_gch_disable_header_wrap', $_POST['gch_disable_header_wrap'] );
 	} else {
 		delete_post_meta( $post_id, '_gch_disable_header_wrap' );
 	}	
