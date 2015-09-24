@@ -90,6 +90,12 @@ function gch_metabox_function( $post ) {
 					<label for="gch_enable_header"><input type="checkbox" name="gch_enable_header" id="gch_enable_header" value="1" <?php checked( $gch_enable_header ); ?> /> <?php _e( 'Check to enable and view options', 'genesis-custom-header' ); ?></label>
 				</td>
 			</tr>
+			<tr>
+				<th scope="row"><strong><?php _e( 'Disable Header Container Wrap', 'genesis-custom-header' ); ?></strong></th>
+				<td>						
+					<label for="gch_disable_header_wrap"><input type="checkbox" name="gch_disable_header_wrap" id="gch_disable_header_wrap" value="1" <?php checked( $gch_disable_header_wrap ); ?> /> <?php _e( 'Check to disable container wrap class', 'genesis-custom-header' ); ?></label>
+				</td>
+			</tr>
 		</tbody>
 	</table>
 	
