@@ -59,6 +59,7 @@ function gch_metabox_function( $post ) {
 
 	// Get page/post meta data
 	$gch_enable_header			  = (isset($custom[ '_gch_enable_header' ][0]) ? $custom[ '_gch_enable_header' ][0] : 0);
+	$gch_disable_header_wrap		= (isset($custom[ '_disable_header_wrap' ][0]) ? $custom[ '_disable_header_wrap' ][0] : 0);
 	$gch_enable_custom_position   = (isset($custom[ '_gch_enable_custom_position' ][0]) ? $custom[ '_gch_enable_custom_position' ][0] : 0);
 	$gch_custom_header_position   = (isset($custom[ '_gch_custom_header_position' ][0]) ? $custom[ '_gch_custom_header_position' ][0] : 'genesis_after_header');
 	$gch_custom_position_priority = (isset($custom[ '_gch_custom_position_priority' ][0]) ? $custom[ '_gch_custom_position_priority' ][0] : '1');
