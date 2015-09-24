@@ -90,7 +90,6 @@ function gch_custom_css() {
 function gch_print_header() {
 	
 	// Get our global plugin settings
-	$gch_disable_header_wrap 		    = genesis_get_option( 'disable_header_wrap', 'genesis-custom-header' );	
 	$gch_global_enable_header_image 	= genesis_get_option( 'enable_header_image', 'genesis-custom-header' ) ;
 	$gch_global_enable_header_slideshow = genesis_get_option( 'enable_header_slideshow', 'genesis-custom-header' ) ;
 	$gch_global_enable_header_content 	= genesis_get_option( 'enable_header_content', 'genesis-custom-header' ) ;
@@ -99,8 +98,11 @@ function gch_print_header() {
 	$custom	= get_post_custom();
 	
 	// Get page/post meta data
+	
+
 	$gch_enable_header			= (isset($custom[ '_gch_enable_header' ][0]) ? $custom[ '_gch_enable_header' ][0] : 0);
 	$gch_enable_image			= (isset($custom[ '_gch_enable_image' ][0]) ? $custom[ '_gch_enable_image' ][0] : 0);
+	$gch_disable_header_wrap		= (isset($custom[ '_disable_header_wrap' ][0]) ? $custom[ '_disable_header_wrap' ][0] : 0);
 	$gch_image_type				= (isset($custom[ '_gch_image_type' ][0]) ? $custom[ '_gch_image_type' ][0] : '');
 	$gch_custom_image  			= (isset($custom[ '_gch_custom_image' ][0]) ? $custom[ '_gch_custom_image' ][0] : '');
 	$gch_custom_image_alt		= (isset($custom[ '_gch_custom_image_alt' ][0]) ? $custom[ '_gch_custom_image_alt' ][0] : '');
