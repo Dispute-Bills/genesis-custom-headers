@@ -51,7 +51,6 @@ function gch_register_admin_settings() {
 				'header_position'		  => 'genesis_after_header',
 				'header_priority'		  => '1',
 				'force_header_position'	  => 0,
-				'disable_header_wrap'	  => 0,
 				'enable_header_css'		  => 0,
 				'header_css'			  => '',
 			);
@@ -241,17 +240,6 @@ function gch_register_admin_settings() {
 		 */
 		function style_settings() {
 			?>
-			
-			<h4><?php _e( 'Disable Header Wrap', 'genesis-custom-header' ); ?></h4>
-			<p>	
-				<label for="<?php echo $this->get_field_id( 'disable_header_wrap' ); ?>">
-					<input type="checkbox" name="<?php echo $this->get_field_name( 'disable_header_wrap' ); ?>" id="<?php echo $this->get_field_id( 'disable_header_wrap' ); ?>" value="1" <?php checked( $this->get_field_value( 'disable_header_wrap' ) ); ?> />
-					<?php echo sprintf( __( 'Check to disable %1$swrap%2$s CSS selector from plugin output', 'genesis-custom-header' ), '<code>', '</code>' ); ?>
-				</label>
-			</p>
-			<p><span class="gch-description"><?php _e( 'With many Genesis child themes, disabling this selector allows for full width headers. Additional CSS styling may be necessary for the desired effect.', 'genesis-custom-header' ); ?></span></p>
-
-
 			<h4><label for="<?php echo $this->get_field_id( 'header_css' ); ?>"><?php _e( 'Custom Header CSS:', 'genesis-custom-header' ); ?></label></h4>
 			<p>
 				<label for="<?php echo $this->get_field_id( 'enable_header_css' ); ?>">
