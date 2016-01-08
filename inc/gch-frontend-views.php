@@ -72,7 +72,7 @@ function gch_custom_css() {
 
 	// Get our global plugin settings
 	$gch_enable_header_css  = genesis_get_option( 'enable_header_css', 'genesis-custom-header' );
-	$gch_header_css 		= genesis_get_option( 'header_css', 'genesis-custom-header' );
+	$gch_header_css 	= genesis_get_option( 'header_css', 'genesis-custom-header' );
 	
 	// If custom header css is enabled, print in header
 	if ( $gch_enable_header_css == 1 ) {
@@ -91,7 +91,7 @@ function gch_print_header() {
 	
 	// Get our global plugin settings
 	$gch_global_enable_header_image 	= genesis_get_option( 'enable_header_image', 'genesis-custom-header' ) ;
-	$gch_global_enable_header_slideshow = genesis_get_option( 'enable_header_slideshow', 'genesis-custom-header' ) ;
+	$gch_global_enable_header_slideshow 	= genesis_get_option( 'enable_header_slideshow', 'genesis-custom-header' ) ;
 	$gch_global_enable_header_content 	= genesis_get_option( 'enable_header_content', 'genesis-custom-header' ) ;
 	$gch_global_enable_header_raw 		= genesis_get_option( 'enable_header_raw', 'genesis-custom-header' ) ;
 	
@@ -105,41 +105,39 @@ function gch_print_header() {
 	$gch_disable_header_wrap		= (isset($custom[ '_gch_disable_header_wrap' ][0]) ? $custom[ '_gch_disable_header_wrap' ][0] : 0);
 	$gch_image_type				= (isset($custom[ '_gch_image_type' ][0]) ? $custom[ '_gch_image_type' ][0] : '');
 	$gch_custom_image  			= (isset($custom[ '_gch_custom_image' ][0]) ? $custom[ '_gch_custom_image' ][0] : '');
-	$gch_custom_image_alt		= (isset($custom[ '_gch_custom_image_alt' ][0]) ? $custom[ '_gch_custom_image_alt' ][0] : '');
+	$gch_custom_image_alt			= (isset($custom[ '_gch_custom_image_alt' ][0]) ? $custom[ '_gch_custom_image_alt' ][0] : '');
   	$gch_image_caption			= (isset($custom[ '_gch_image_caption' ][0]) ? $custom[ '_gch_image_caption' ][0] : '');
-  	$gch_enable_slideshow  		= (isset($custom[ '_gch_enable_slideshow' ][0]) ? $custom[ '_gch_enable_slideshow' ][0] : 0);
-	$gch_slider_shortcode		= (isset($custom[ '_gch_slider_shortcode' ][0]) ? $custom[ '_gch_slider_shortcode' ][0] : '');
-	$gch_soliloquy_slider		= (isset($custom[ '_gch_soliloquy_slider' ][0]) ? $custom[ '_gch_soliloquy_slider' ][0] : '');
-	$gch_revolution_slider  	= (isset($custom[ '_gch_revolution_slider' ][0]) ? $custom[ '_gch_revolution_slider' ][0] : '');
+  	$gch_enable_slideshow  			= (isset($custom[ '_gch_enable_slideshow' ][0]) ? $custom[ '_gch_enable_slideshow' ][0] : 0);
+	$gch_slider_shortcode			= (isset($custom[ '_gch_slider_shortcode' ][0]) ? $custom[ '_gch_slider_shortcode' ][0] : '');
+	$gch_soliloquy_slider			= (isset($custom[ '_gch_soliloquy_slider' ][0]) ? $custom[ '_gch_soliloquy_slider' ][0] : '');
+	$gch_revolution_slider  		= (isset($custom[ '_gch_revolution_slider' ][0]) ? $custom[ '_gch_revolution_slider' ][0] : '');
 	$gch_meta_slider			= (isset($custom[ '_gch_meta_slider' ][0]) ? $custom[ '_gch_meta_slider' ][0] : '');
-	$gch_sliderpro_slider  		= (isset($custom[ '_gch_sliderpro_slider' ][0]) ? $custom[ '_gch_sliderpro_slider' ][0] : '');
-  	$gch_enable_custom_content	= (isset($custom[ '_gch_enable_custom_content' ][0]) ? $custom[ '_gch_enable_custom_content' ][0] : 0);
-	$gch_custom_content  		= (isset($custom[ '_gch_custom_content' ][0]) ? $custom[ '_gch_custom_content' ][0] : '');
-	$gch_enable_header_raw      = (isset($custom[ '_gch_enable_header_raw' ][0]) ? $custom[ '_gch_enable_header_raw' ][0] : 0);
-	$gch_header_raw  		    = (isset($custom[ '_gch_header_raw' ][0]) ? $custom[ '_gch_header_raw' ][0] : '');
+	$gch_sliderpro_slider  			= (isset($custom[ '_gch_sliderpro_slider' ][0]) ? $custom[ '_gch_sliderpro_slider' ][0] : '');
+  	$gch_enable_custom_content		= (isset($custom[ '_gch_enable_custom_content' ][0]) ? $custom[ '_gch_enable_custom_content' ][0] : 0);
+	$gch_custom_content  			= (isset($custom[ '_gch_custom_content' ][0]) ? $custom[ '_gch_custom_content' ][0] : '');
+	$gch_enable_header_raw  		= (isset($custom[ '_gch_enable_header_raw' ][0]) ? $custom[ '_gch_enable_header_raw' ][0] : 0);
+	$gch_header_raw  		  	= (isset($custom[ '_gch_header_raw' ][0]) ? $custom[ '_gch_header_raw' ][0] : '');
 
   	// If the header is been enabled, do stuff...		
 	if ( $gch_enable_header == 1 ) {
 	
-	
-		// Add header structure, and disable wrap selector if desired
-		echo '<div class="gch-header"><div class="gch-header-inner ';
-		if ( $gch_disable_header_wrap != 1 ){
-			echo 'wrap';
+		if ( $gch_disable_header_wrap != 1 ){ // if wrap enabled
+			genesis_structural_wrap( 'gch-wrap', 'open' ); // container
+			printf( '<div %s>', genesis_attr( 'gch-header' ) ); //jumbotron
+		} else { // else wrap disabled
+			printf( '<div %s>', genesis_attr( 'gch-header' ) ); // jumbotron
+			genesis_structural_wrap( 'gch-wrap', 'open' );
 		}
-		echo '">';
 		
 		
 		// Display header image, custom or featured
 		if ( $gch_global_enable_header_image == 1 && $gch_enable_image == 1 ) {
 			// Check to see if the current post/page/custom post type has a featured image set
 			$thumbnail = has_post_thumbnail( get_the_ID() );
-			
 			// Print our image
 			if ( $gch_image_type == 'custom' && $gch_custom_image != '' ) {
 				echo '<div class="gch-header-image"><div class="gch-header-image-inner">';
 				echo '<img src="' . esc_url( $gch_custom_image ) . '" alt="' . $gch_custom_image_alt . '" />';
-				
 				// Print the caption if there is one
 				if ( $gch_image_caption != '' ) {
 					echo '<div class="gch-caption"><div class="gch-caption-inner">';
@@ -150,21 +148,20 @@ function gch_print_header() {
 			} else if ( $gch_image_type == 'featured' && $thumbnail == true ) {
 				echo '<div class="gch-header-image"><div class="gch-header-image-inner">';
 				echo the_post_thumbnail( 'full' );
-				
 				// Print the caption if there is one
 				if ( $gch_image_caption != '' ) {
-					echo '<div class="gch-caption"><div class="gch-caption-inner">';
+					echo '<div' . genesis_attr( 'gch-caption' ) . '>';
+					echo '<div' . genesis_attr( 'gch-caption-inner' ) . '>';
 					echo wp_kses_post( $gch_image_caption );
 					echo '</div></div>';
 				}
 				echo '</div></div>';
 			}
-		}
+		} // End display header image, custom or featured
 		
 		
 		// Display header slider
 		if ( $gch_global_enable_header_slideshow == 1 && $gch_enable_slideshow == 1 ) {
-			
 			// Allows us to use is_plugin_active on the frontend
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			
@@ -196,10 +193,9 @@ function gch_print_header() {
 				if ( is_plugin_active( 'slider-pro/slider-pro.php' ) ) {
 					gch_display_sliderpro_sliders( $gch_sliderpro_slider );
 				}
-			
 			echo '</div>';
-    	
-    	}
+			
+    		} // end Display header slider
 		
 		
 		// Display custom content
@@ -207,7 +203,7 @@ function gch_print_header() {
 			echo '<div class="gch-header-content">';
 				echo do_shortcode( wp_kses_post( $gch_custom_content ) );   //do_shortcode needed to enable shortcode functionality (perhaps not the most elegant way of doing this)
 			echo '</div>';
-		}
+		} // end Display custom content
 		
 		
 		// Display header scripts
@@ -215,11 +211,24 @@ function gch_print_header() {
 			echo '<div class="gch-header-scripts">';
 				echo do_shortcode( $gch_header_raw );   
 			echo '</div>';
+		} // end Display header scripts
+		
+		
+		
+		
+		
+		if ( $gch_disable_header_wrap != 1 ){ // if wrap enabled
+			genesis_structural_wrap( 'gch-wrap', 'close' ); // container
+			printf( '<div %s>', genesis_attr( 'gch-header' ) ); //jumbotron
+		} else { // else wrap disabled
+			printf( '<div %s>', genesis_attr( 'gch-header' ) ); // jumbotron
+			genesis_structural_wrap( 'gch-wrap', 'close' );
 		}
 		
-		echo '</div></div>';
- 	}
+		
+		
+ 	} // headers enabled
 
-}
+} // end function
 
 ?>
